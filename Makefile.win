@@ -1,0 +1,28 @@
+# Project: Clases_2_6_ok
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Ejercicio4_Clases.o
+LINKOBJ  = Ejercicio4_Clases.o
+LIBS     = -L"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/lib" -L"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/include" -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/include" -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Users/alang/Documents/Axel/3er semestre/Progra/Dev C/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Ejercicio4_Clases.exe
+CXXFLAGS = $(CXXINCS) -ansi -pedantic-errors -Wall -Wconversion -g -std=c99
+CFLAGS   = $(INCS) -ansi -pedantic-errors -Wall -Wconversion -g -std=c99
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Ejercicio4_Clases.o: Ejercicio4_Clases.cpp
+	$(CPP) -c Ejercicio4_Clases.cpp -o Ejercicio4_Clases.o $(CXXFLAGS)
